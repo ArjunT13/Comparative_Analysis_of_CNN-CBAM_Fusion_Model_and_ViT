@@ -92,8 +92,8 @@ def buildModel(n_features=157):
     ehr_out = Dropout(0.25)(dense2)    
 
     """The branch dealing with ECG Data"""
-    lead3 = Input(shape=(124, 124, 3))
-    x = Conv2D(64, (3, 3), padding="same", activation='relu')(lead3)
+    lead1 = Input(shape=(124, 124, 3))
+    x = Conv2D(64, (3, 3), padding="same", activation='relu')(lead1)
     x = cbam_block(x)
     x = BatchNormalization()(x)
     x = MaxPooling2D((3, 3))(x)
@@ -103,8 +103,8 @@ def buildModel(n_features=157):
     x = MaxPooling2D((3, 3))(x)
     x1 = Conv2D(128, (3, 3), padding="same", activation='relu')(x)
 
-    lead8 = Input(shape=(124, 124, 3))
-    x = Conv2D(64, (3, 3), padding="same", activation='relu')(lead8)
+    lead2 = Input(shape=(124, 124, 3))
+    x = Conv2D(64, (3, 3), padding="same", activation='relu')(lead2)
     x = cbam_block(x)
     x = BatchNormalization()(x)
     x = MaxPooling2D((3, 3))(x)
@@ -137,7 +137,7 @@ def buildModel(n_features=157):
     hidden2 = Dense(1, activation='sigmoid',name='output2')(drop1)
 
     #Building the Model
-    model = tf.keras.Model(inputs = [demo_in, lead3, lead8], outputs=hidden2)
+    model = tf.keras.Model(inputs = [demo_in, lead1, lead2], outputs=hidden2)
 
     print("Compiling the Model with optimizers and Metrics")
     opt = tf.keras.optimizers.Adam(learning_rate = 1e-4)
