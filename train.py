@@ -22,8 +22,8 @@ from keras import regularizers
 from keras import layers
 
 from inputread import load_EHR_data
-from vit import vit_model
-from cnn_cbam import buildModel
+from models.vit import vit_model
+from models.cnn_cbam import buildModel
 
 
 gpu_fraction = 1
