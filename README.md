@@ -42,13 +42,13 @@ Run the **main.py** file using the code present below, it takes a CSV file conta
 !python3 main.py -i <input-csv-file> -m <model-name>
 ```
 
-where `<model-name>` can be either CNN or ViT
+where `<input-csv-file>` represents the CSV file containing the EHR data, in our case it's named as "Share_data_outcome_deidentified.csv". The `<model-name>` argument indicates the model which you wish to run, which could be either CNN or ViT.
 
 Example...
 ```python
 !python3 main.py -i Share_data_outcome_deidentified.csv -m CNN
 ```
-This will automatically save the ROC curves along with confidence intervals (CI) in <ROC_Outcomes> directory.
+This will automatically save the ROC curves along with confidence intervals (CI) in "ROC_Outcomes" directory.
 **The data we worked on has not been uploaded yet.**
 
 ## Result
