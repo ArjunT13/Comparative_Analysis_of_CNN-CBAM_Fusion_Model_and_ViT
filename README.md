@@ -42,10 +42,7 @@ Run the **main.py** file using the code present below, it takes a CSV file conta
 !python3 main.py -i <input-csv-file> -m <model-name>
 ```
 
-```python
-<model-name>
-``` 
-can be either CNN or ViT
+where `<model-name>` can be either CNN or ViT
 
 Example...
 ```python
