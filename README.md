@@ -31,7 +31,7 @@ Channel Attention Module
 
 
 ## ViT Fusion Model Architecture
-![ViT model](images/Vit+MLP_model_architecture_final.png)
+![ViT model](images/Vit+MLP_model_architecture.png)
 
 ## How to Implement? 
 
